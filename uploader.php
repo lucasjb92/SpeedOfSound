@@ -1,5 +1,5 @@
 <?php
-	$target_path = "";
+	$target_path = "songs/";
 
 	$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 
