@@ -74,6 +74,7 @@ function playGame() {
 	
 	//reset score:
 	score = 0;
+	maxLeft = pieceStartX;
 	pieceX= pieceStartX;
     pieceY = pieceStartY;
 	
