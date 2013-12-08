@@ -145,9 +145,9 @@ function playGame() {
 			minutes = Math.floor(currTime/60);
 			seconds = Math.floor(currTime % 60);
 			if( seconds < 10)
-				formattedTime = minutes + ":0" + seconds;
+				formattedTime = "Time: " + minutes + ":0" + seconds;
 			else
-				formattedTime = minutes + ":" + seconds;
+				formattedTime = "Time: " + minutes + ":" + seconds;
 			$("#songTime").html(formattedTime);
 			
 			//clear the canvas:
@@ -211,6 +211,7 @@ function playGame() {
 			canv.fillRect(pieceX,pieceY,pieceSize,pieceSize);
 			
 			//display updated score:
+			var scoreText = "Score: " + score;
 			$("#score").html(score);
 		};
 
