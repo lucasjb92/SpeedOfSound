@@ -59,6 +59,9 @@ function playGame() {
 	canv.fillStyle = gameBackgroundHex;
 	canv.fillRect(0,0,WIDTH,HEIGHT);
 	
+	//undisable score submit
+	$('#submitScore input[type="submit"]').prop('disabled',false);
+	
 	//display ready text:
 	canv.fillStyle="#FFFFFF";
 	canv.font="70px Arial";

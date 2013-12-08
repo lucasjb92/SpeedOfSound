@@ -4,13 +4,19 @@ $(document).ready(function() {
 	});
 	
 	$('#submitScore').ajaxForm(function(data) { 
-        alert(data);
-        $.ajax({
-   			url: 'highscore.php',
-   			success: function(data) {
-     			$('#highScores').html(data);
-   			}
-		});
+		if(data != "error"){
+			alert(data);
+        	$.ajax({
+   				url: 'highscore.php',
+   				success: function(data) {
+     				$('#highScores').html(data);
+     				$('#submitScore input[type="submit"]').prop('disabled',true);
+   				}
+			});
+		}
+		else{
+			alert("Invalid score.");
+		}
 	});
 	
 	$('#uploadSong').ajaxForm(function(data) { 

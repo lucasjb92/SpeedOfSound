@@ -5,16 +5,22 @@
   	{
   		echo "Failed to connect to MySQL: " . mysqli_connect_error();
   	}
-    
-    $sql="INSERT INTO Score (Player, Score)
-	VALUES
-	('$_POST[player]','$_POST[score]')";
-	
-	if (!mysqli_query($con,$sql))
-  	{
-  		die('Error: ' . mysqli_error($con));
+  	
+  	if($_POST[score] > 0){
+  		$sql="INSERT INTO Score (Player, Score)
+		VALUES
+		('$_POST[player]','$_POST[score]')";
+		
+		if (!mysqli_query($con,$sql))
+  		{
+  			die('Error: ' . mysqli_error($con));
+  		}
+		echo "Your score has been submitted!";
   	}
-	echo "Your score has been submitted!";
+    else
+    {
+    	echo "error";
+    }
 	
 	mysqli_close($con);
 ?>
