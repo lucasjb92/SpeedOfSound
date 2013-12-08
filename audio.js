@@ -48,7 +48,7 @@ var maxLeft = pieceStartX;
 
 $(document).ready(function() {
 
-	loadAudio("http://wwwx.cs.unc.edu/~ljboyer/webProj/mottoD.mp3");
+	loadAudio("http://wwwp.cs.unc.edu/~ljboyer/SpeedOfSound/mottoD.mp3");
 	songLength = 10;//181
 
 });
