@@ -79,9 +79,9 @@ function playGame() {
 	score = 0;
 	maxLeft = pieceStartX;
 	pieceX= pieceStartX;
-    pieceY = pieceStartY;
+    pieceY = pieceStartY;	
 	
-	
+	array = new Array();
 	context.decodeAudioData(
 	request.response,
 	function(buffer) {
@@ -145,6 +145,9 @@ function playGame() {
 				
 				//put the score in the score form:
 				$("#scoreField").val(score);
+				
+				//remove event handler:
+				sourceJs.onaudioprocess = null;
 				
 				//display loading text:
 				canv.fillStyle="#FFFFFF";
