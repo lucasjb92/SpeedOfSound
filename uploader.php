@@ -1,5 +1,5 @@
 <?php
-	$target_path = "http://wwwp.cs.unc.edu/Courses/comp426-f13/ljboyer/final/songs/";
+	$target_path = "songs/";
 
 	$target_path = $target_path . basename( $_FILES['uploadedfile']['name']); 
 
