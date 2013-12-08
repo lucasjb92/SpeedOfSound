@@ -53,6 +53,7 @@ $(document).ready(function() {
 
 });
 
+//plays the game
 function playGame() {
 	//clear the canvas:
 	canv.fillStyle = gameBackgroundHex;
@@ -89,10 +90,8 @@ function playGame() {
 		analyser = context.createAnalyser();
 		analyser.smoothingTimeConstant = 0.6;
 		analyser.fftSize = 128;
-
 		source = context.createBufferSource();
 		source.buffer = buffer;
-
 		source.connect(analyser);
 		analyser.connect(sourceJs);
 		source.connect(context.destination);
@@ -122,14 +121,8 @@ function playGame() {
 			array = new Uint8Array(analyser.frequencyBinCount);
 			analyser.getByteFrequencyData(array);
 			
+			//check if the song is finished:
 			currTime = context.currentTime;
-			minutes = Math.floor(currTime/60);
-			seconds = Math.floor(currTime % 60);
-			if( seconds < 10)
-				formattedTime = minutes + ":0" + seconds;
-			else
-				formattedTime = minutes + ":" + seconds;
-			$("#songTime").html(formattedTime);
 			if( currTime > songLength) {
 				source.noteOff(0);
 				
@@ -147,6 +140,15 @@ function playGame() {
 				canv.fillText("box below to submit your score",WIDTH/3-40,HEIGHT/2+110,WIDTH/3+80);
 				return;
 			}
+			
+			//display the time
+			minutes = Math.floor(currTime/60);
+			seconds = Math.floor(currTime % 60);
+			if( seconds < 10)
+				formattedTime = minutes + ":0" + seconds;
+			else
+				formattedTime = minutes + ":" + seconds;
+			$("#songTime").html(formattedTime);
 			
 			//clear the canvas:
 			canv.fillStyle = gameBackgroundHex;
@@ -222,6 +224,7 @@ function playGame() {
 
 }
 
+//loads in the specified audio file:
 function loadAudio(url) {
 
 	//get canvas:
