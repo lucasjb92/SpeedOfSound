@@ -48,7 +48,7 @@ var maxLeft = pieceStartX;
 
 $(document).ready(function() {
 
-	loadAudio("http://wwwx.cs.unc.edu/~ljboyer/webProj/mottoD.mp3");
+	//loadAudio("http://wwwp.cs.unc.edu/~ljboyer/SpeedOfSound/mottoD.mp3");
 	songLength = 10;//181
 
 });
@@ -130,6 +130,9 @@ function playGame() {
 				canv.fillStyle = gameBackgroundHex;
 				canv.fillRect(0,0,WIDTH,HEIGHT);
 				
+				//put the score in the score form:
+				$("#scoreField").val(score);
+				
 				//display loading text:
 				canv.fillStyle="#FFFFFF";
 				canv.font="60px Arial";
@@ -145,9 +148,9 @@ function playGame() {
 			minutes = Math.floor(currTime/60);
 			seconds = Math.floor(currTime % 60);
 			if( seconds < 10)
-				formattedTime = minutes + ":0" + seconds;
+				formattedTime = "Time: " + minutes + ":0" + seconds;
 			else
-				formattedTime = minutes + ":" + seconds;
+				formattedTime = "Time: " + minutes + ":" + seconds;
 			$("#songTime").html(formattedTime);
 			
 			//clear the canvas:
@@ -211,7 +214,8 @@ function playGame() {
 			canv.fillRect(pieceX,pieceY,pieceSize,pieceSize);
 			
 			//display updated score:
-			$("#score").html(score);
+			var scoreText = "Score: " + score;
+			$("#score").html(scoreText);
 		};
 
 		//starts playing the audio:

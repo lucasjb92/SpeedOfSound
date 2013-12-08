@@ -8,7 +8,7 @@
     
     $sql="INSERT INTO Score (Player, Score)
 	VALUES
-	('$_POST[player]','999')";
+	('$_POST[player]','$_POST[score]')";
 	
 	if (!mysqli_query($con,$sql))
   	{
