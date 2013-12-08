@@ -212,7 +212,7 @@ function playGame() {
 			
 			//display updated score:
 			var scoreText = "Score: " + score;
-			$("#score").html(score);
+			$("#score").html(scoreText);
 		};
 
 		//starts playing the audio:
