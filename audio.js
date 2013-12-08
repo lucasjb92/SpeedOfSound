@@ -254,6 +254,8 @@ function loadAudio(url) {
 		//playGame();
 		audioLoaded = true;
 		
+		gameInProgress = false;
+		
 		//clear the canvas:
 		canv.fillStyle = gameBackgroundHex;
 		canv.fillRect(0,0,WIDTH,HEIGHT);
