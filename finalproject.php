@@ -8,12 +8,15 @@
 	    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.js"></script> 
     	<script src="http://malsup.github.com/jquery.form.js"></script>
     	<script src="finalproject.js"></script>
+		<script src="audio.js"></script>
     	<script>
     		function SelectSong() {
     			var selectedSong = document.getElementById('songSelect').value;
+				var songPath = "http://wwwp.cs.unc.edu/~ljboyer/SpeedOfSound/" + selectedSong;
+				loadAudio(songPath);
     		}
     	</script>
-		<script src="audio.js"></script>
+
 	</head>
 	<body>	
 		<div id="top">
