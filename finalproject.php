@@ -13,7 +13,14 @@
     		function SelectSong() {
     			var selectedSong = document.getElementById('songSelect').value;
 				var songPath = "http://wwwp.cs.unc.edu/~ljboyer/SpeedOfSound/" + selectedSong;
+				var theURL = 'getSongLength.php/' + selectedSong;
 				loadAudio(songPath);
+				$.ajax({
+					url: theURL,
+					success: function(data) {
+						songLength = data;
+					}
+				});
     		}
     	</script>
 

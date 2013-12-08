@@ -9,7 +9,7 @@ var request;
 
 var audioLoaded = false;
 var gameInProgress = false;
-var songLength;
+var songLength = 0;
 
 //canvas
 var gWindow;
@@ -49,7 +49,7 @@ var maxLeft = pieceStartX;
 $(document).ready(function() {
 
 	//loadAudio("http://wwwp.cs.unc.edu/~ljboyer/SpeedOfSound/mottoD.mp3");
-	songLength = 10;//181
+	//songLength = 10;//181
 
 });
 
