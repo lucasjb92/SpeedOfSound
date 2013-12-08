@@ -72,6 +72,11 @@ function playGame() {
 		context = new AudioContext();		
 	}
 	
+	//reset score:
+	score = 0;
+	pieceX= pieceStartX;
+    pieceY = pieceStartY;
+	
 	
 	context.decodeAudioData(
 	request.response,
