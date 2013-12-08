@@ -12,7 +12,7 @@
     	<script>
     		function SelectSong() {
     			var selectedSong = document.getElementById('songSelect').value;
-				var songPath = "http://wwwp.cs.unc.edu/~ljboyer/SpeedOfSound/" + selectedSong;
+				var songPath = "http://wwwp.cs.unc.edu/Courses/comp426-f13/ljboyer/final/" + selectedSong;
 				var theURL = 'getSongLength.php/' + selectedSong;
 				loadAudio(songPath);
 				$.ajax({
