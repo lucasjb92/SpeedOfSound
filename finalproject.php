@@ -52,6 +52,7 @@
 			<br><h2>Submit Score:</h2>
 			<form id="submitScore" action="score.php" method="POST">
 				Name: <input type="text" name="player"><br>
+				<input id="scoreField" name="score" type="number" style="display:none" >
 				<input type="submit" value="Submit" />
 			</form>
 			

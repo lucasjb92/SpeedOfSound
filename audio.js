@@ -130,6 +130,9 @@ function playGame() {
 				canv.fillStyle = gameBackgroundHex;
 				canv.fillRect(0,0,WIDTH,HEIGHT);
 				
+				//put the score in the score form:
+				$("#scoreField").val(score);
+				
 				//display loading text:
 				canv.fillStyle="#FFFFFF";
 				canv.font="60px Arial";
