@@ -1,0 +1,19 @@
+body {
+	text-align:center;
+	background-image:url('blackground.png');
+	color:#ffd7f3;
+	font-family: 'Prosto One', cursive;
+	list-style-position:inside;
+}
+
+h1 {
+	font-size:45px;
+}
+
+fieldset {
+	border-style:none;
+}
+
+.newScore {
+	color:#ff0000;
+}
