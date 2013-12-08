@@ -13,19 +13,23 @@
     			var selectedSong = document.getElementById('songSelect').value;
     		}
     	</script>
+		<script src="audio.js"></script>
 	</head>
 	<body>	
 		<div id="top">
 			<h1>Speed of Sound</h1>
-			<img alt="gamePlaceholder" width="800" height="480" src="http://www.androidtapp.com/wp-content/uploads/2012/12/Audio-Glow-Music-Visualizer-Various-themes-and-customisations-5.png" />
+			<canvas id="gameWindow" width=900 height=650></canvas>
 		</div>
+		<div id="score"></div>
+		<div id="songTime"></div>
 		<div id ="instructions">
 			<h2>Instructions:</h2>
 			<ol>
-				<li>Pick a song</li>
-				<li>Use arrow keys to move</li>
+				<li>Pick a song to play</li>
+				<li>Use the W,A,S,D keys to move</li>
 				<li>Make your way through the maze</li>
 				<li>Score points based on how far you get</li>
+				<li>Getting hit by a bar deducts points and restarts you</li>
 				<li>Bonus points awarded for each maze completed</li>
 				<li>Pick another song to play again</li>
 			</ol>
