@@ -118,6 +118,7 @@ function playGame() {
 		var formattedTime;	 
 
 		sourceJs.onaudioprocess = function(e) {
+			if(!gameInProgress) return;
 			array = new Uint8Array(analyser.frequencyBinCount);
 			analyser.getByteFrequencyData(array);
 			
@@ -125,6 +126,9 @@ function playGame() {
 			currTime = context.currentTime;
 			if( currTime > songLength) {
 				source.noteOff(0);
+				
+				audioLoaded = false;
+				gameInProgress = false;
 				
 				//clear the canvas:
 				canv.fillStyle = gameBackgroundHex;
@@ -253,9 +257,7 @@ function loadAudio(url) {
 	request.onload = function() {		
 		//playGame();
 		audioLoaded = true;
-		
-		gameInProgress = false;
-		
+				
 		//clear the canvas:
 		canv.fillStyle = gameBackgroundHex;
 		canv.fillRect(0,0,WIDTH,HEIGHT);
