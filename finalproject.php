@@ -18,7 +18,10 @@
 				$.ajax({
 					url: theURL,
 					success: function(data) {
-						songLength = data;
+						var timeValues = data.split(":");
+						var minutes = parseInt(timeValues[0]);
+						var seconds = parseInt(timeValues[1]);
+						songLength = minutes*60 + seconds;
 						alert(songLength);
 					}
 				});
