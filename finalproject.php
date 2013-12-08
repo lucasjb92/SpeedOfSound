@@ -19,6 +19,7 @@
 					url: theURL,
 					success: function(data) {
 						songLength = data;
+						alert(songLength);
 					}
 				});
     		}
